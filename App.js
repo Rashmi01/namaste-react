@@ -1,26 +1,41 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-
-const parent = React.createElement(
-    "div", 
-    {id:"parent"}, 
-    [React.createElement(
-        "div", 
-        {id:"child1"}, 
-        [React.createElement("h1", {}, "h1 tag"),React.createElement("h2", {}, "h2 tag")]
-    ),
-    React.createElement(
-        "div", 
-        {id:"child2"}, 
-        [React.createElement("h1", {}, "h1 tag"),React.createElement("h2", {}, "h2 tag")]
-    )]
+//JSX is not HTML in JS
+//React Element
+const Title = ()=>(
+<h1 className="heading" tabIndex="5">
+    h1 tag using JSXHeading
+    </h1>
 );
 
-const heading = React.createElement(
-    "h1", 
-    {id:"heading"}, 
-    "Hello World from React"
+const SpanComponent = () => (
+    <h1 id= "sspancomponent"> SpanComponent</h1>
 );
+const elem = (<span> span react element</span>)
+
+
+
+const number = 1000;
+//React components
+// Funnctional Components
+//HeadingComponents is same as HeadingComponents2
+//Component Composition
+const HeadingComponents = () => (
+   <div id="container">
+    {Title()}
+    <Title/>
+    <Title></Title>
+    <h2>{number +100}</h2>
+    <SpanComponent/>
+     <h1 className="heading">Namaste functional react components</h1>
+   </div>
+);
+const reactElement = (
+   
+    <h1> {elem}  Hellooo, im react element being used in functional component <HeadingComponents/> </h1>
+    )
+//const HeadingComponents2 = () => (<h1>Namaste functional react components</h1>)
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+///root.render(JSXHeading);
+root.render(<HeadingComponents/>)
