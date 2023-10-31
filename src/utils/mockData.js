@@ -1,45 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * 
- * Header
- *  -Logo
- *  -Nav Items
- * Body
- *  - Search
- *  - REstaurant Container
- *      - Restaurant Card
- *          image
- *          name of restaurant
- *          star rating
- *          cuisines
- *          
- * Footer
- *  - CopyRight
- *  - Links
- *  - Address
- *  - Contact
- */
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="Logo-container">
-                <img className="Logo" src = "https://img.freepik.com/free-vector/food-delivery-man-riding-motorcycles-cartoon-art-illustration_56104-610.jpg"></img>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
 const resList = [
     {
             "id": "25620",
@@ -926,52 +884,5 @@ const resList = [
         }
     }
 ]
-const RestaurantCard = (props) => {
-    const {resData } = props;
-    return (
-        <div className="res-card" style={styleCard}>
-            <img className="res-logo" src ={
-                "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
-                +resData.cloudinaryImageId
-            } />
-            <h3>{resData.name}</h3>
-            <h5>{resData.cuisines.join(", ")}</h5>
-            <h5>{resData.avgRatingString} stars</h5>
-            <h5>{resData.sla.deliveryTime} min</h5>
-            <h5>Rs{resData.feeDetails.totalFee} for two</h5>
-        </div>
-    )
-}
-const Body = () =>{
-    return (
-        <div className="body">
-            <div className="search">
-                Search
-            </div>
-            <div className="res-container">
-                {
-                    resList.map(restaurant => <RestaurantCard key={restaurant.id} resData={restaurant}/>)
-                }
-               
 
-
-            </div>
-        </div>
-    )
-}
-
-const styleCard = {
-    backgroundColor: "#f0f0f0"
-}
-
-const AppComponent = () => {
-    return (
-        <div className = "app">
-            <Header/>
-            <Body />
-        </div>
-    )
-}
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppComponent/>)
+export default resList; 

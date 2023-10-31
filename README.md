@@ -19,3 +19,25 @@
 - Tree Shaking - remove unused code from app
 - Different Dev and production build
 
+
+# Namaste Food
+/**
+ * 
+ * Header
+ *  -Logo
+ *  -Nav Items
+ * Body
+ *  - Search
+ *  - REstaurant Container
+ *      - Restaurant Card
+ *          image
+ *          name of restaurant
+ *          star rating
+ *          cuisines
+ *          
+ * Footer
+ *  - CopyRight
+ *  - Links
+ *  - Address
+ *  - Contact
+ */
